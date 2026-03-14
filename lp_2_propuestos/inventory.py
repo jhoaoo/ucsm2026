@@ -1,46 +1,11 @@
-class Inventario:
+import pandas as pd
+import os
 
-    def __init__(self):
+class Inventory:
+    def __init__(self, file="data.xlsx"):
+        self.file = file
+        if not os.path.exists(file):
+            pd.DataFrame(columns=["ID", "Nombre", "Precio", "Stock"]).to_excel(file, index=False)
 
-        # Lista donde se almacenan objetos Producto
-        self.productos = []
-
-    def agregar_producto(self, producto):
-
-        for p in self.productos:
-            if p.id_producto == producto.id_producto:
-                raise ValueError("El producto ya existe")
-
-        self.productos.append(producto)
-
-    def obtener_producto(self, id_producto):
-
-        for producto in self.productos:
-            if producto.id_producto == id_producto:
-                return producto
-
-        return None
-
-    def mostrar_inventario(self):
-
-        print("\n--- INVENTARIO ---")
-
-        for producto in self.productos:
-            print(producto)
-
-    def buscar_producto(self, nombre):
-
-        print("\n--- RESULTADOS DE BUSQUEDA ---")
-
-        encontrados = []
-
-        for producto in self.productos:
-
-            if nombre.lower() in producto.nombre.lower():
-                encontrados.append(producto)
-
-        if not encontrados:
-            print("No se encontraron productos")
-
-        for p in encontrados:
-            print(p)
+    def get_df(self): return pd.read_excel(self.file)
+    def save(self, df): df.to_excel(self.file, index=False)
