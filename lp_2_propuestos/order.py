@@ -22,3 +22,4 @@ class Pedido:
     def __str__(self):
 
         return f"Cliente:{self.cliente} | Producto:{self.producto.nombre} | Cantidad:{self.cantidad} | Estado:{self.estado}"
+    print
