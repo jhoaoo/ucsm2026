@@ -1,4 +1,4 @@
-#include "../include/RegistroAcademico.h"
+#include "RegistroAcademico.h"
 #include <iostream>
 
 RegistroAcademico::RegistroAcademico(Estudiante* e, Asignatura* a) 

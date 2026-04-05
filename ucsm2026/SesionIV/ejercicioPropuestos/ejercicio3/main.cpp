@@ -1,8 +1,8 @@
 #include <iostream>
-#include "include/Estudiante.h"
-#include "include/Profesor.h"
-#include "include/Asignatura.h"
-#include "include/RegistroAcademico.h"
+#include "Estudiante.h"
+#include "Profesor.h"
+#include "Asignatura.h"
+#include "RegistroAcademico.h"
 
 int main() {
     // 1. Crear Profesor
